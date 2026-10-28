@@ -7,6 +7,13 @@ description = "A native GPUI shell around x.com"
 [dependencies]
 anyhow = "1"
 futures = "0.3"
+url = "2"
 gpui = "=0.2.2"
 gpui-component = { version = "=0.5.1", features = ["webview"] }
 wry = { package = "lb-wry", version = "=0.53.3" }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", features = ["NSWindow", "NSResponder", "NSView", "NSGraphics"] }
+objc2-foundation = { version = "0.3", features = ["NSGeometry", "NSString", "NSURL"] }
+objc2-web-kit = { version = "0.3", features = ["WKWebView", "WKWebViewConfiguration", "objc2-app-kit"] }

@@ -9,14 +9,20 @@ A native desktop shell for [x.com](https://x.com), built with [GPUI](https://www
 cargo run --release
 ```
 
+To install it as `~/Applications/Quick X.app` (so launchers can open it by name):
+
+```bash
+scripts/bundle-macos.sh
+```
+
 ## Features
 
 - GPUI title bar with back, forward, reload and home buttons, plus the page title
 - Shortcuts: `⌘[` back, `⌘]` forward, `⌘R` reload, `⌘⇧H` home, `⌘Q` quit
 - Native Edit menu, so copy and paste work inside the page
-- Login persists between launches (WebKit data store in `~/Library/WebKit/quick-x`)
-- Links that open a new window load in the app if they point to x.com, twitter.com or the Google/Apple sign-in pages; all other links open in your default browser
-- Sign in with a username and password. "Sign in with Google/Apple" is untested and probably does not work in an embedded webview.
+- Login persists between launches (WebKit data store in `~/Library/WebKit/com.cesarferreira.quick-x` for the app bundle, or `~/Library/WebKit/quick-x` with `cargo run`)
+- "Sign in with Google/Apple" opens in a separate popup window, like a normal browser. The popup may stay open (blank) after sign-in; close it.
+- Other links that open a new window load in the app if they point to x.com or twitter.com; all other web links open in your default browser
 
 ## Stack
 
