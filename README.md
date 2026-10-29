@@ -5,19 +5,27 @@ A native desktop shell for [x.com](https://x.com), built with [GPUI](https://www
 
 ![Quick X running on macOS](docs/screenshot.jpg)
 
-## Run
+## Install
+
+macOS only. Needs a Rust toolchain.
 
 ```bash
-cargo run --release
+make install     # builds and installs ~/Applications/Quick X.app
+make uninstall   # removes it
 ```
 
-To install it as `~/Applications/Quick X.app` (so launchers can open it by name):
+Use `make install APP_DIR=/Applications` to install somewhere else.
+
+## Develop
 
 ```bash
-scripts/bundle-macos.sh
+make run         # cargo run --release
+make test
+make lint
+make icon        # regenerate assets/AppIcon.icns from assets/icon.svg (needs rsvg-convert)
 ```
 
-The app icon is drawn in `assets/icon.svg`. After editing it, run `scripts/make-icon.sh` (needs `rsvg-convert`) to regenerate `assets/AppIcon.icns`.
+Set `QUICK_X_DEBUG=1` to log page loads, popups and new-window requests.
 
 ## Features
 
