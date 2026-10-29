@@ -3,6 +3,8 @@
 A native desktop shell for [x.com](https://x.com), built with [GPUI](https://www.gpui.rs) and the
 [gpui-component](https://github.com/longbridge/gpui-component) `WebView` (wry / WKWebView).
 
+![Quick X running on macOS](docs/screenshot.jpg)
+
 ## Run
 
 ```bash
@@ -14,6 +16,8 @@ To install it as `~/Applications/Quick X.app` (so launchers can open it by name)
 ```bash
 scripts/bundle-macos.sh
 ```
+
+The app icon is drawn in `assets/icon.svg`. After editing it, run `scripts/make-icon.sh` (needs `rsvg-convert`) to regenerate `assets/AppIcon.icns`.
 
 ## Features
 
